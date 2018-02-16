@@ -3,7 +3,7 @@ PREFIX?=$(shell pwd)
 
 # Setup name variables for the package/tool
 NAME := reg
-PKG := github.com/jessfraz/$(NAME)
+PKG := github.com/pawelprazak/$(NAME)
 
 # Set any default go build tags
 BUILDTAGS :=
@@ -157,7 +157,7 @@ dind: ## Starts a docker-in-docker container for running the tests with
 		--name $(DIND_CONTAINER) \
 		--privileged \
 		-v $(CURDIR)/.certs:/etc/docker/ssl \
-		-v $(CURDIR):/go/src/github.com/jessfraz/reg \
+		-v $(CURDIR):/go/src/github.com/pawelprazak/reg \
 		-v /tmp:/tmp \
 		$(DIND_DOCKER_IMAGE) \
 		dockerd -D --storage-driver $(DOCKER_GRAPHDRIVER) \
@@ -175,8 +175,8 @@ DOCKER_IMAGE := reg-dev
 dtest: ## Run the tests in a docker container
 	docker build --rm --force-rm -f Dockerfile.dev -t $(DOCKER_IMAGE) .
 	docker run --rm -i $(DOCKER_FLAGS) \
-		-v $(CURDIR):/go/src/github.com/jessfraz/reg \
-		--workdir /go/src/github.com/jessfraz/reg \
+		-v $(CURDIR):/go/src/github.com/pawelprazak/reg \
+		--workdir /go/src/github.com/pawelprazak/reg \
 		-v $(CURDIR)/.certs:/etc/docker/ssl:ro \
 		-v /tmp:/tmp \
 		--net container:$(DIND_CONTAINER) \

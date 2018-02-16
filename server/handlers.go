@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/jessfraz/reg/clair"
-	"github.com/jessfraz/reg/registry"
+	"github.com/pawelprazak/reg/clair"
+	"github.com/pawelprazak/reg/registry"
 	"github.com/sirupsen/logrus"
 )
 

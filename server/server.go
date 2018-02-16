@@ -9,10 +9,10 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/jessfraz/reg/clair"
-	"github.com/jessfraz/reg/registry"
-	"github.com/jessfraz/reg/utils"
 	wordwrap "github.com/mitchellh/go-wordwrap"
+	"github.com/pawelprazak/reg/clair"
+	"github.com/pawelprazak/reg/registry"
+	"github.com/pawelprazak/reg/utils"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )
